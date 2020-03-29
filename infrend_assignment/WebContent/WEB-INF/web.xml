@@ -13,10 +13,34 @@ id="WebApp_ID" version="3.0">
 	<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 	<load-on-startup>1</load-on-startup>
 </servlet>
+
+<!-- database -->
+<!-- H2 Database Console for managing the app's database -->
+
+<!--  
+<servlet>
+    <servlet-name>H2Console</servlet-name>
+    <servlet-class>org.h2.server.web.WebServlet</servlet-class>
+    <init-param>
+        <param-name>-webAllowOthers</param-name>
+        <param-value>true</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>H2Console</servlet-name>
+    <url-pattern>/admin/h2/*</url-pattern>
+</servlet-mapping>
+
+-->
+<!-- Handles requests into the application -->
 <servlet-mapping>
 	<servlet-name>Faces Servlet</servlet-name>
 	<url-pattern>/faces/*</url-pattern>
 </servlet-mapping>
+
+
 <context-param>
 	<description>State saving method: 'client' or 'server' (=default). See JSF Specification 2.5.2</description>
 	<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
