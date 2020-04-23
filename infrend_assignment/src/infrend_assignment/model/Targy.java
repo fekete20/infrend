@@ -1,4 +1,4 @@
-package infrend_assignment;
+package infrend_assignment.model;
 
 import java.util.List;
 

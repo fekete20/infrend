@@ -1,14 +1,13 @@
-package infrend_assignment;
+package infrend_assignment.model;
 
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+
 
 public class Admin {
 	
-	@Id
+	
 	private int id;
 	
-	@NotNull(message="A név nem lehet üres.")
+
 	private String name;
 
 	public Admin(String name, int id) {

@@ -1,25 +1,41 @@
-package infrend_assignment;
+package infrend_assignment.model;
 
 import java.util.ArrayList;
 
 public class Oktato {
-	private String name;
+	private int id;
+	private String nev;
 	private String tanszek;
 	private ArrayList<String> oktatott_targyak = new ArrayList<String>();
 
-	public Oktato(String name, String tanszek, ArrayList<String> oktatott_targyak) {
+	public Oktato(int id, String name, String tanszek, ArrayList<String> oktatott_targyak) {
 		// super();
-		this.name = name;
+		this.id = id;
+		this.nev = name;
 		this.tanszek = tanszek;
 		this.oktatott_targyak = oktatott_targyak;
 	}
+	
+	
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 
 	public String getName() {
-		return name;
+		return nev;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.nev = name;
 	}
 
 	public String getTanszek() {
@@ -40,7 +56,7 @@ public class Oktato {
 
 	@Override
 	public String toString() {
-		return "Oktató neve: " + name + ", oktatott tárgyai:" + oktatott_targyak;
+		return "Oktató neve: " + nev + ", oktatott tárgyai:" + oktatott_targyak;
 	}
 
 }
