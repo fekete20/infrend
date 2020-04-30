@@ -1,0 +1,130 @@
+body {
+    font:20px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    color:#fafaff;
+    padding:0;
+    margin:0;
+    background-color:#262626;
+}
+
+.header{
+    padding-top:10px;
+    min-height:70px;
+    border-bottom:red 3px solid;
+    position:sticky;
+    top: 0;
+    overflow: hidden;
+    background-color:#262626;
+}
+
+.container{
+    width:55%;
+    margin:auto;
+}
+
+.header h1{
+    margin: 0;
+    font-family: Tandelle;
+    font-size: 70px;
+    text-shadow: 2px 2px 5px black;
+}
+
+#banner {
+    background-color: violet;
+    height: 100px;
+    font-size: 80px;
+}
+
+#menuBar {
+    font-size: 16px;
+    background: black;
+    float: right;
+    width: 59%;
+}
+header #nav{
+    padding:0 50px;
+    border-bottom:red 3px solid;
+}
+
+header #nav a{
+    color:#fff;
+    font-size:15px;
+    text-decoration:none;
+    display: inline-block;
+    padding: 4px 10px;
+    margin-left: 5px;
+}
+header #nav a:hover{
+    background:rgba(255,0,0,0.5);
+    color:#fff;
+    text-decoration:none;
+    transition: 0.3s;
+}
+
+#fancyaf{
+    float:none;
+    min-height:500px;
+    background:url('../img/bg.jpg') no-repeat 0;
+    background-position: center;
+    text-align:center;
+    color:#ffffff;
+    border-bottom:red 3px solid;
+    text-shadow: 2px 2px 5px black;
+}
+
+#fancyaf h1{
+    margin-top: 0px;
+    font-size:50px;
+
+}
+
+#fancyaf p{
+    font-size:20px;
+}
+
+.container{
+    width:55%;
+    margin:auto;
+}
+
+#tables {
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    alignment: center;
+    border: none;
+}
+
+#th {
+    border:none;
+    font-size: 20px;
+    height: 25px;
+}
+
+#td {
+    border:none;
+}
+
+.list {
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.carlist {
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input [type=text] [type=number] [type=date]{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
