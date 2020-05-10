@@ -34,39 +34,4 @@ public class Admin {
 		return "Adminisztrátor neve: " + name;
 	}
 
-	/*
-	 * public void createHallgato(String nev) {
-	 * 
-	 * }
-	 * 
-	 * public void createOktato(String nev) {
-	 * 
-	 * }
-	 * 
-	 * public void createTargy(String nev) {
-	 * 
-	 * }
-	 * 
-	 * public void createKurzus(String nev) {
-	 * 
-	 * }
-	 * 
-	 * public void deleteKurzus(String nev) {
-	 * 
-	 * }
-	 * 
-	 * public void osszerendelHallg(Hallgato h) {
-	 * 
-	 * }
-	 * 
-	 * public void osszerendelOkt(Oktato o) {
-	 * 
-	 * }
-	 * 
-	 * public void jegybeiras(int mark) {
-	 * 
-	 * }
-	 * 
-	 */
-
 }

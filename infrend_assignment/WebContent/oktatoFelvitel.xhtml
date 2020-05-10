@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:p="http://primefaces.org/ui">  
+<h:head>  
+    <title>Oktató felvitele</title>    
+</h:head>  
+<h:body>  
+<h5><a href="index.xhtml">Vissza a kezdőlapra</a></h5>
+    <h:form>  
+
+        <h2 style="text-align: center">Adatbevitel</h2>  
+      
+        <div style="text-align: center">
+            <p:outputLabel for="name">Név</p:outputLabel>
+        </div>
+        <div style="text-align: center">
+            <p:inputText id="name" value="#{oktato.name}" required="true"/>
+        </div>
+
+      <div style="text-align: center">
+            <p:outputLabel for="tanszek">Tanszék</p:outputLabel>
+        </div>
+        <div style="text-align: center">
+            <p:inputText id="tanszek" value="#{oktato.tanszek}" required="true"/>
+        </div>
+        
+        <div style="text-align: center">
+            <p:outputLabel for="oktatott_targyak" >Oktatott tárgyak</p:outputLabel>
+        </div>
+        <div style="text-align: center">
+            <p:inputText id="oktatott_targyak" value="#{oktato.oktatottTargyak}"/>
+        </div>
+ 
+        
+        <div style="text-align: center">
+            <p:commandButton value="Mentés" action="#{oktato.addOktato()}"></p:commandButton>
+        </div>
+  
+    </h:form>  
+</h:body>  
+</html>  
