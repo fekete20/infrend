@@ -1,40 +1,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
-<html xmlns="http://www.w3.org/1999/xhtml"  
-xmlns:h="http://xmlns.jcp.org/jsf/html"  
-xmlns:f="http://xmlns.jcp.org/jsf/core"
-xmlns:p="http://primefaces.org/ui">  
-<h:head>  
-<title>Hallgatók listázása</title>
-</h:head>  
-<h:body>  
-<h5><a href="index.xhtml">Vissza a kezdőlapra</a></h5>
-<h:form>  
-        <center><h2><h:outputText value="Hallgatók"/></h2></center>  
-        <p:dataTable binding="#{table}" value="#{hallgato.hallgatoListazas()}" var="h">  
-    <!--         <p:column>  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Hallgatók listázása</title>
+</h:head>
+<h:body>
+	<h5>
+		<a href="index.xhtml">Vissza a kezdőlapra</a>
+	</h5>
+	<h:form>
+		<center>
+			<h2>
+				<h:outputText value="Hallgatók" />
+			</h2>
+		</center>
+		<p:dataTable binding="#{table}" value="#{hallgato.hallgatoListazas()}"
+			var="h">
+			<!--         <p:column>  
                 <f:facet name="header">ID</f:facet>  
                 <h:outputText value="#{h.id}"/>  
             </p:column>  -->
-            <p:column>  
-                <f:facet name="header">Név</f:facet>  
-                <h:outputText value="#{h.name}"/>  
-            </p:column>  
- <!--            <p:column>  
+			<p:column>
+				<f:facet name="header">Név</f:facet>
+				<h:outputText value="#{h.name}" />
+			</p:column>
+			<!--            <p:column>  
                 <f:facet name="header">Tankör</f:facet>  
                 <h:outputText value="#{h.tankor}"/>  
             </p:column>  -->
-            <p:column>  
-                <f:facet name="header">Hallgatott tárgyak</f:facet>  
-                <h:outputText value="#{h.hallgatottTargyak}"/>  
-            </p:column>  
-          <p:column>  
-                <f:facet name="header">Jegy</f:facet>  
-                <h:outputText value="#{h.jegy}"/>  
-            </p:column>  
-        </p:dataTable>  
-        
-    
-    </h:form>  
+			<p:column>
+				<f:facet name="header">Hallgatott tárgyak</f:facet>
+				<h:outputText value="#{h.hallgatottTargyak}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Jegy</f:facet>
+				<h:outputText value="#{h.jegy}" />
+			</p:column>
+		</p:dataTable>
+
+
+	</h:form>
 </h:body>
 </html>

@@ -1,25 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
-<html xmlns="http://www.w3.org/1999/xhtml"  
-xmlns:h="http://xmlns.jcp.org/jsf/html"  
-xmlns:f="http://xmlns.jcp.org/jsf/core"
-xmlns:p="http://primefaces.org/ui">  
-<h:head>  
-    <title>Jegybeírás hallgatónak</title>    
-</h:head>  
-<h:body>  
-<h5><a href="index.xhtml">Vissza a kezdőlapra</a></h5>
-    <h:form>  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Jegybeírás hallgatónak</title>
+</h:head>
+<h:body>
+	<h5>
+		<a href="index.xhtml">Vissza a kezdőlapra</a>
+	</h5>
+	<h:form>
 
-        <h2 style="text-align: center">Adatbevitel</h2>  
+		<h2 style="text-align: center">Adatbevitel</h2>
 
-         <div style="text-align: center">
-            <p:outputLabel for="id">Hallgató ID</p:outputLabel>
-        </div>
-        <div style="text-align: center">
-            <p:inputNumber id="id" value="#{hallgato.id}"/>
-        </div>
- <!--       
+		<div style="text-align: center">
+			<p:outputLabel for="id">Hallgató ID</p:outputLabel>
+		</div>
+		<div style="text-align: center">
+			<p:inputNumber id="id" value="#{hallgato.id}" />
+		</div>
+		<!--       
         <div style="text-align: center">
             <p:outputLabel for="name">Név</p:outputLabel>
         </div>
@@ -40,18 +42,18 @@ xmlns:p="http://primefaces.org/ui">
         <div style="text-align: center">
             <p:inputText id="hallgatottTargyak" value="#{hallgato.hallgatottTargyak}"/>
         </div>
- --> 
-        
-        <div style="text-align: center">
-            <p:outputLabel for="id">Jegy</p:outputLabel>
-        </div>
-        <div style="text-align: center">
-            <p:inputNumber id="jegy" value="#{hallgato.jegy}"/>
-        </div>
-        <div style="text-align: center">
-            <p:commandButton value="Mentés" action="#{hallgato.jegybeiras()}"></p:commandButton>
-        </div>
-  
-    </h:form>  
-</h:body>  
-</html>  
+ -->
+
+		<div style="text-align: center">
+			<p:outputLabel for="id">Jegy</p:outputLabel>
+		</div>
+		<div style="text-align: center">
+			<p:inputNumber id="jegy" value="#{hallgato.jegy}" />
+		</div>
+		<div style="text-align: center">
+			<p:commandButton value="Mentés" action="#{hallgato.jegybeiras()}"></p:commandButton>
+		</div>
+
+	</h:form>
+</h:body>
+</html>
