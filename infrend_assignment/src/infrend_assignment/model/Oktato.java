@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -20,13 +21,21 @@ public class Oktato {
 	private String oktatottTargyak;
 
 	public Oktato(int id, String name, String tanszek, String oktatottTargyak) {
-		// super();
+
 		this.id = id;
 		this.name = name;
 		this.tanszek = tanszek;
 		this.oktatottTargyak = oktatottTargyak;
 	}
 
+/*	public Oktato(int id, String name, String tanszek, List<String> oktatottTargyak) {
+		// super();
+		this.id = id;
+		this.name = name;
+		this.tanszek = tanszek;
+		this.oktatottTargyak = oktatottTargyak;
+	}
+*/	
 	public Oktato() {
 
 	}
@@ -55,13 +64,13 @@ public class Oktato {
 		this.tanszek = tanszek;
 	}
 
-	/*
-	 * public List<String> getOktatottTargyak() { return oktatottTargyak; }
-	 * 
-	 * public void setOktatott_targyak(ArrayList<String> oktatottTargyak) {
-	 * this.oktatottTargyak = oktatottTargyak; }
-	 */
-
+	
+	/* public List<String> getOktatottTargyak() { return oktatottTargyak; }
+	 
+	 public void setOktatott_targyak(ArrayList<String> oktatottTargyak) {
+	 this.oktatottTargyak = oktatottTargyak; }
+	 
+*/
 	public String getOktatottTargyak() {
 		return oktatottTargyak;
 	}
@@ -77,8 +86,6 @@ public class Oktato {
 
 	// DB-s része
 	private Connection connection;
-	private PreparedStatement preparedStatement;
-	private ResultSet resultSet;
 
 	public Connection getConnection() {
 		String username = "root";
@@ -94,6 +101,8 @@ public class Oktato {
 		}
 		return connection;
 	}
+	
+	
 
 	private ArrayList<Oktato> oktatoLista;
 
@@ -109,6 +118,7 @@ public class Oktato {
 				oktato.setName(rs.getString("name"));
 //	    	    oktato.setTanszek(rs.getString("tanszek"));
 				oktato.setOktatottTargyak(rs.getString("oktatottTargyak"));
+//				oktato.setOktatottTargyak(rs.getString("oktatottTargyak"));
 				oktatoLista.add(oktato);
 				System.out.println(oktato.toString());
 			}

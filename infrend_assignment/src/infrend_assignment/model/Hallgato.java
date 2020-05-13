@@ -96,14 +96,12 @@ public class Hallgato {
 
 	@Override
 	public String toString() {
-		return "Hallgató neve: " + name + ", tankör: " + tankor + ", hallgatott tárgyak és érdemjegy: "
-				+ hallgatottTargyak;
+		return "Hallgató neve: " + name + ", hallgatott tárgyak: "
+				+ hallgatottTargyak + ", érdemjegy: " + jegy;
 	}
 
 	// DB-s része
 	private Connection connection;
-	private PreparedStatement preparedStatement;
-	private ResultSet resultSet;
 
 	public Connection getConnection() {
 		String username = "root";
@@ -149,7 +147,6 @@ public class Hallgato {
 	}
 
 	public void addHallgato() {
-		int result = 0;
 		try {
 			connection = getConnection();
 			PreparedStatement stmt = connection.prepareStatement(
@@ -159,7 +156,7 @@ public class Hallgato {
 			stmt.setString(3, tankor);
 			stmt.setString(4, hallgatottTargyak);
 			stmt.setInt(5, jegy);
-			result = stmt.executeUpdate();
+			stmt.executeUpdate();
 			connection.close();
 		} catch (Exception e) {
 			System.err.println(e);
@@ -179,5 +176,37 @@ public class Hallgato {
 			System.err.println(e.getMessage());
 		}
 	}
+	
+//	ArrayList<String> tankorok = new ArrayList<>();
+//	ArrayList<Double> atlagok = new ArrayList<>();
+//	
+//	public void atlag() {
+//		try {
+//			connection = getConnection();
+//			Statement stmt = getConnection().createStatement();
+//			ResultSet rs = stmt.executeQuery("select tankor, avg(jegy) from hallgato group by tankor");
+//			
+//			while (rs.next()) {
+//				
+//				tankorok.add(rs.getString("tankor"));
+//				atlagok.add(rs.getDouble("avg(jegy)"));
+//				
+//				
+//			}
+//			
+//			for(String t : tankorok) {
+//				System.out.println(t + "\t");
+//			}
+//			
+//			for(double a : atlagok) {
+//				System.out.println(a + "\t");
+//			}
+//				
+//			connection.close();
+//
+//		} catch (Exception e) {
+//			System.err.println(e.getMessage());
+//		}
+//	}
 
 }

@@ -19,18 +19,10 @@
 		</center>
 		<p:dataTable binding="#{table}" value="#{hallgato.hallgatoListazas()}"
 			var="h">
-			<!--         <p:column>  
-                <f:facet name="header">ID</f:facet>  
-                <h:outputText value="#{h.id}"/>  
-            </p:column>  -->
 			<p:column>
 				<f:facet name="header">Név</f:facet>
 				<h:outputText value="#{h.name}" />
 			</p:column>
-			<!--            <p:column>  
-                <f:facet name="header">Tankör</f:facet>  
-                <h:outputText value="#{h.tankor}"/>  
-            </p:column>  -->
 			<p:column>
 				<f:facet name="header">Hallgatott tárgyak</f:facet>
 				<h:outputText value="#{h.hallgatottTargyak}" />

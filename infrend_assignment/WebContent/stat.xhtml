@@ -1,15 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8"></meta>
-<title>Statisztikák kezelése</title>
-</head>
-<body>
-<h5><a href="index.xhtml">Vissza a kezdőlapra</a></h5>
-Egy adott tankör, tankörátlagának kiszámítása. Egy adott hallgató 
-átlagának kiszámítása.
-<p>
-...
-</p>
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Tankör átlagának kiszámítása</title>
+</h:head>
+<h:body>
+	<h5>
+		<a href="index.xhtml">Vissza a kezdőlapra</a>
+	</h5>
+	<h:form>
+		<center>
+			<h2>
+				<h:outputText value="Statisztika" />
+			</h2>
+		</center>
+		<p:dataTable binding="#{table}" value="#{atlag.atlagSzamitas()}" var="a">
+			<p:column>
+				<f:facet name="header">Tankör</f:facet>
+		
+				<h:outputText value="#{a.tankor}" />
+			
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">Átlag</f:facet>
+				<h:outputText value="#{a.avg}" />
+			</p:column>
+
+		</p:dataTable>
+
+
+	</h:form>
+</h:body>
 </html>
