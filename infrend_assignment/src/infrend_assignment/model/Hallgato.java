@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -15,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
+@SuppressWarnings("deprecation")
 @ManagedBean
 @RequestScoped
 public class Hallgato {
@@ -31,11 +31,8 @@ public class Hallgato {
 	private String hallgatottTargyak;
 
 	private int jegy;
-//	private HashMap<String, Integer> hallgatott_targyak = new HashMap<String, Integer>();
 
-//		private ArrayList<String> hallgatott_targyak = new ArrayList<String>();
 	public Hallgato(int id, String name, String tankor, String hallgatottTargyak, int jegy) {
-		// super();
 		this.id = id;
 		this.name = name;
 		this.tankor = tankor;

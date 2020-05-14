@@ -6,36 +6,26 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+@SuppressWarnings("deprecation")
 @ManagedBean
 @RequestScoped
 public class Oktato {
 	private int id;
 	private String name;
 	private String tanszek;
-//	private List<String> oktatottTargyak = new ArrayList<>();
 	private String oktatottTargyak;
 
 	public Oktato(int id, String name, String tanszek, String oktatottTargyak) {
-
 		this.id = id;
 		this.name = name;
 		this.tanszek = tanszek;
 		this.oktatottTargyak = oktatottTargyak;
 	}
 
-/*	public Oktato(int id, String name, String tanszek, List<String> oktatottTargyak) {
-		// super();
-		this.id = id;
-		this.name = name;
-		this.tanszek = tanszek;
-		this.oktatottTargyak = oktatottTargyak;
-	}
-*/	
 	public Oktato() {
 
 	}
@@ -64,13 +54,6 @@ public class Oktato {
 		this.tanszek = tanszek;
 	}
 
-	
-	/* public List<String> getOktatottTargyak() { return oktatottTargyak; }
-	 
-	 public void setOktatott_targyak(ArrayList<String> oktatottTargyak) {
-	 this.oktatottTargyak = oktatottTargyak; }
-	 
-*/
 	public String getOktatottTargyak() {
 		return oktatottTargyak;
 	}
