@@ -24,33 +24,33 @@
 <h:body>
 	<h:form>
 
-		<h2 style="text-align: center">Oktató felvitele</h2>
+		<h2>Oktató felvitele</h2>
 
-		<div style="text-align: center">
+		<div>
 			<p:outputLabel for="name">Név</p:outputLabel>
 		</div>
-		<div style="text-align: center">
+		<div>
 			<p:inputText class="inputbox" id="name" value="#{oktato.name}" required="true" />
 		</div>
-
-		<div style="text-align: center">
+		<p></p>
+		<div>
 			<p:outputLabel for="tanszek">Tanszék</p:outputLabel>
 		</div>
-		<div style="text-align: center">
+		<div>
 			<p:inputText class="inputbox" id="tanszek" value="#{oktato.tanszek}" required="true" />
 		</div>
-
-		<div style="text-align: center">
-			<p:outputLabel for="oktatott_targyak">Oktatott tárgyak</p:outputLabel>
+		<p></p>
+		<div>
+			<p:outputLabel for="oktatott_targyak">Oktatott tárgyak (opcionális)</p:outputLabel>
 		</div>
-		<div style="text-align: center">
+		<div>
 			<p:inputText class="inputbox" id="oktatott_targyak" value="#{oktato.oktatottTargyak}" />
 		</div>
 
 <p>
 </p>
 
-		<div style="text-align: center" class="buttons">
+		<div class="buttons">
 			<p:commandButton  value="Mentés" action="#{oktato.addOktato()}" onsuccess="alert('Oktató eltárolva az adatbázisban.')" onerror="alert('Hiba történt')"></p:commandButton>
 		</div>
 

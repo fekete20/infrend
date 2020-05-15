@@ -6,6 +6,7 @@ body {
     padding:0;
     margin:0;
     background-color:#262626;
+    text-align: center;
 }
 
 .header{
@@ -17,6 +18,33 @@ body {
     overflow: hidden;
     background-color:#262626;
 }
+
+.tables {
+    text-align: center;
+    margin: auto;
+    width: 90%;
+    border: red 3px solid;
+    alignment: center;
+    border: none;
+}
+
+.list {
+    margin: auto;
+    width: 37.5%;
+    text-align: center;
+    padding: 12.5px;
+    font-size: 20px;
+    border: red 3px solid;
+/* style="width:37.5%; text-align: center; padding:12.5px; font-size:20px; border:red 3px solid;" */
+}
+
+.th {
+	 border: none;
+    font-size: 20px;
+    height: 25px;
+}
+
+
 
  #nav{
  align-items: center;

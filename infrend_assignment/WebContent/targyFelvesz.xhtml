@@ -23,26 +23,24 @@
 <h:body>
 	<h:form>
 
-		<h2 style="text-align: center">Tárgy és hallgató összerendelése</h2>
+		<h2>Tárgy és hallgató összerendelése</h2>
 
-		    <div style="text-align: center">
+		    <div>
             <p:outputLabel >Hallgató neve</p:outputLabel>
         </div>
- <!--       <div style="text-align: center">
-            <p:inputNumber class="inputbox" id="id" value="#{hallgato.id}" label="ID-t írd befele"/>
-        </div>  -->
-       	<div class="list" style="text-align: center">
-			<h:selectOneMenu value = "#{hallgato.name}"> 
+
+       	<div>
+			<h:selectOneMenu class="list" value = "#{hallgato.name}"> 
 			   <f:selectItems value = "#{hallgato.nevLista()}" /> 
 
 			</h:selectOneMenu>
 			</div>
-		
+		<p></p>
 
-		<div style="text-align: center">
+		<div>
 			<p:outputLabel for="hallgatottTargyak">Hallgatott tárgyak</p:outputLabel>
 		</div>
-		<div style="text-align: center">
+		<div>
 			<p:inputText class="inputbox" id="hallgatottTargyak"
 				value="#{hallgato.hallgatottTargyak}" />
 		</div>
