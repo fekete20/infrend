@@ -76,13 +76,6 @@ public class Hallgato {
 		this.jegy = jegy;
 	}
 
-	/*
-	 * public HashMap<String, Integer> getHallgatott_targyak() { return
-	 * hallgatott_targyak; }
-	 * 
-	 * public void setHallgatott_targyak(HashMap<String, Integer>
-	 * hallgatott_targyak) { this.hallgatott_targyak = hallgatott_targyak; }
-	 */
 	public String getHallgatottTargyak() {
 		return hallgatottTargyak;
 	}
@@ -93,11 +86,9 @@ public class Hallgato {
 
 	@Override
 	public String toString() {
-		return "Hallgató neve: " + name + ", hallgatott tárgyak: "
-				+ hallgatottTargyak + ", érdemjegy: " + jegy;
+		return "Hallgató neve: " + name + ", hallgatott tárgyak: " + hallgatottTargyak + ", érdemjegy: " + jegy;
 	}
 
-	// DB-s része
 	private Connection connection;
 
 	public Connection getConnection() {
@@ -125,9 +116,7 @@ public class Hallgato {
 			ResultSet rs = stmt.executeQuery("select name, hallgatottTargyak, jegy from hallgato");
 			while (rs.next()) {
 				Hallgato hallgato = new Hallgato();
-//		    	   hallgato.setId(rs.getInt("id"));
 				hallgato.setName(rs.getString("name"));
-//		    	   hallgato.setTankor(rs.getString("tankor"));
 				hallgato.setHallgatottTargyak(rs.getString("hallgatottTargyak"));
 				hallgato.setJegy(rs.getInt("jegy"));
 
@@ -160,12 +149,37 @@ public class Hallgato {
 		}
 	}
 
+	private ArrayList<String> nevLista;
+
+	public ArrayList<String> nevLista() {
+
+		try {
+			nevLista = new ArrayList<String>();
+			connection = getConnection();
+			Statement stmt = getConnection().createStatement();
+			ResultSet rs = stmt.executeQuery("select name from hallgato");
+			while (rs.next()) {
+				String name = rs.getString("name");
+				System.out.println(nevLista);
+				nevLista.add(name);
+				
+			}
+			
+			connection.close();
+			
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+
+		return nevLista;
+	}
+
 	public void jegybeiras() {
 		try {
 			connection = getConnection();
-			PreparedStatement stmt = connection.prepareStatement("update hallgato set jegy = ? where id = ?");
+			PreparedStatement stmt = connection.prepareStatement("update hallgato set jegy = ? where name = ?");
 			stmt.setInt(1, jegy);
-			stmt.setInt(2, id);
+			stmt.setString(2, name);
 			stmt.executeUpdate();
 			connection.close();
 
@@ -173,37 +187,20 @@ public class Hallgato {
 			System.err.println(e.getMessage());
 		}
 	}
-	
-//	ArrayList<String> tankorok = new ArrayList<>();
-//	ArrayList<Double> atlagok = new ArrayList<>();
-//	
-//	public void atlag() {
-//		try {
-//			connection = getConnection();
-//			Statement stmt = getConnection().createStatement();
-//			ResultSet rs = stmt.executeQuery("select tankor, avg(jegy) from hallgato group by tankor");
-//			
-//			while (rs.next()) {
-//				
-//				tankorok.add(rs.getString("tankor"));
-//				atlagok.add(rs.getDouble("avg(jegy)"));
-//				
-//				
-//			}
-//			
-//			for(String t : tankorok) {
-//				System.out.println(t + "\t");
-//			}
-//			
-//			for(double a : atlagok) {
-//				System.out.println(a + "\t");
-//			}
-//				
-//			connection.close();
-//
-//		} catch (Exception e) {
-//			System.err.println(e.getMessage());
-//		}
-//	}
+
+	public void targyFelvesz() {
+		try {
+			connection = getConnection();
+			PreparedStatement stmt = connection
+					.prepareStatement("update hallgato set hallgatottTargyak = ? where name = ?");
+			stmt.setString(1, hallgatottTargyak);
+			stmt.setString(2, name);
+			stmt.executeUpdate();
+			connection.close();
+
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+	}
 
 }

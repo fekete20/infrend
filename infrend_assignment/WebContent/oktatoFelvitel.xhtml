@@ -6,39 +6,52 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Oktató felvitele</title>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	
+	<div id="nav">
+		<a href="index.xhtml"><h3>Kezdőlap</h3></a>
+		<a href="oktatoListazas.xhtml"><h3>Oktatók listázása</h3></a>
+		<a href="hallgatoListazas.xhtml"><h3>Hallgatók listázása</h3></a>
+		<a href="oktatoFelvitel.xhtml"><h3>Oktató felvitele</h3></a>
+		<a href="hallgatoFelvitel.xhtml"><h3>Hallgató felvitele</h3></a>
+		<a href="targyFelvesz.xhtml"><h3>Tárgy és hallgató összerendelése</h3></a>
+		<a href="jegybeiras.xhtml"><h3>Jegybeírás</h3></a>
+		<a href="stat.xhtml"><h3>Statisztika (átlagok lekérdezése)</h3></a>
+	
+	</div>
+	
 </h:head>
 <h:body>
-	<h5>
-		<a href="index.xhtml">Vissza a kezdőlapra</a>
-	</h5>
 	<h:form>
 
-		<h2 style="text-align: center">Adatbevitel</h2>
+		<h2 style="text-align: center">Oktató felvitele</h2>
 
 		<div style="text-align: center">
 			<p:outputLabel for="name">Név</p:outputLabel>
 		</div>
 		<div style="text-align: center">
-			<p:inputText id="name" value="#{oktato.name}" required="true" />
+			<p:inputText class="inputbox" id="name" value="#{oktato.name}" required="true" />
 		</div>
 
 		<div style="text-align: center">
 			<p:outputLabel for="tanszek">Tanszék</p:outputLabel>
 		</div>
 		<div style="text-align: center">
-			<p:inputText id="tanszek" value="#{oktato.tanszek}" required="true" />
+			<p:inputText class="inputbox" id="tanszek" value="#{oktato.tanszek}" required="true" />
 		</div>
 
 		<div style="text-align: center">
 			<p:outputLabel for="oktatott_targyak">Oktatott tárgyak</p:outputLabel>
 		</div>
 		<div style="text-align: center">
-			<p:inputText id="oktatott_targyak" value="#{oktato.oktatottTargyak}" />
+			<p:inputText class="inputbox" id="oktatott_targyak" value="#{oktato.oktatottTargyak}" />
 		</div>
 
+<p>
+</p>
 
-		<div style="text-align: center">
-			<p:commandButton value="Mentés" action="#{oktato.addOktato()}"></p:commandButton>
+		<div style="text-align: center" class="buttons">
+			<p:commandButton  value="Mentés" action="#{oktato.addOktato()}" onsuccess="alert('Oktató eltárolva az adatbázisban.')" onerror="alert('Hiba történt')"></p:commandButton>
 		</div>
 
 	</h:form>

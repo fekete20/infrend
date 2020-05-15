@@ -6,47 +6,52 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Hallgató felvitele</title>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	
+	<div id="nav">
+		<a href="index.xhtml"><h3>Kezdőlap</h3></a>
+		<a href="oktatoListazas.xhtml"><h3>Oktatók listázása</h3></a>
+		<a href="hallgatoListazas.xhtml"><h3>Hallgatók listázása</h3></a>
+		<a href="oktatoFelvitel.xhtml"><h3>Oktató felvitele</h3></a>
+		<a href="hallgatoFelvitel.xhtml"><h3>Hallgató felvitele</h3></a>
+		<a href="targyFelvesz.xhtml"><h3>Tárgy és hallgató összerendelése</h3></a>
+		<a href="jegybeiras.xhtml"><h3>Jegybeírás</h3></a>
+		<a href="stat.xhtml"><h3>Statisztika (átlagok lekérdezése)</h3></a>
+	
+	</div>
 </h:head>
 <h:body>
-	<h5>
-		<a href="index.xhtml">Vissza a kezdőlapra</a>
-	</h5>
 	<h:form>
 
-		<h2 style="text-align: center">Adatbevitel</h2>
+		<h2 style="text-align: center">Hallgató felvitele</h2>
 
-		<!--     <div style="text-align: center">
-            <p:outputLabel for="id">ID</p:outputLabel>
-        </div>
-        <div style="text-align: center">
-            <p:inputNumber id="id" value="#{hallgato.id}"/>
-        </div>
-        -->
 		<div style="text-align: center">
 			<p:outputLabel for="name">Név</p:outputLabel>
 		</div>
 		<div style="text-align: center">
-			<p:inputText id="name" value="#{hallgato.name}" required="true" />
+			<p:inputText class="inputbox" id="name" value="#{hallgato.name}" required="true" />
 		</div>
 
 		<div style="text-align: center">
 			<p:outputLabel for="tankor">Tankör</p:outputLabel>
 		</div>
 		<div style="text-align: center">
-			<p:inputText id="tankor" value="#{hallgato.tankor}" required="true" />
+			<p:inputText class="inputbox" id="tankor" value="#{hallgato.tankor}" required="true" />
 		</div>
 
 		<div style="text-align: center">
 			<p:outputLabel for="hallgatottTargyak">Hallgatott tárgyak</p:outputLabel>
 		</div>
 		<div style="text-align: center">
-			<p:inputText id="hallgatottTargyak"
+			<p:inputText class="inputbox" id="hallgatottTargyak"
 				value="#{hallgato.hallgatottTargyak}" />
 		</div>
 
+<p>
+</p>
 
 		<div style="text-align: center">
-			<p:commandButton value="Mentés" action="#{hallgato.addHallgato()}"></p:commandButton>
+			<p:commandButton onsuccess="alert('Hallgató eltárolva az adatbázisban.')" onerror="alert('Hiba történt')" value="Mentés" action="#{hallgato.addHallgato()}"></p:commandButton>
 		</div>
 
 	</h:form>

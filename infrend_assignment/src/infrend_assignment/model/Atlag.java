@@ -9,23 +9,22 @@ import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-
 @SuppressWarnings("deprecation")
 @ManagedBean
 @RequestScoped
 public class Atlag {
 	private String tankor;
 	private Double avg;
-	
+
 	public Atlag(String tankor, Double avg) {
 		this.tankor = tankor;
 		this.avg = avg;
 	}
-	
+
 	public Atlag() {
 
 	}
-	
+
 	public String getTankor() {
 		return tankor;
 	}
@@ -41,7 +40,6 @@ public class Atlag {
 	public void setAvg(Double atlag) {
 		this.avg = atlag;
 	}
-
 
 	@Override
 	public String toString() {
@@ -64,8 +62,9 @@ public class Atlag {
 		}
 		return connection;
 	}
-	
-	ArrayList<Atlag> atlagok; 
+
+	ArrayList<Atlag> atlagok;
+
 	public ArrayList<Atlag> atlagSzamitas() {
 		try {
 			connection = getConnection();
@@ -76,17 +75,17 @@ public class Atlag {
 				Atlag atlag = new Atlag();
 				atlag.setTankor(rs.getString("tankor"));
 				atlag.setAvg(rs.getDouble("avg(jegy)"));
-				atlagok.add(atlag);				
-				
+				atlagok.add(atlag);
+
 				atlag.toString();
-			}	
+			}
 			connection.close();
 
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
-		
+
 		return atlagok;
 	}
-	
+
 }

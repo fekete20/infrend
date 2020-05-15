@@ -5,7 +5,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Jegybeírás hallgatónak</title>
+	<title>Hallgató és tárgy összerendelés</title>
 	<link href="style.css" rel="stylesheet" type="text/css"/>
 	
 	<div id="nav">
@@ -23,42 +23,37 @@
 <h:body>
 	<h:form>
 
-		<h2 style="text-align: center">Jegybeírás</h2>
-		
-	 	<div style="text-align: center">
-			<p:outputLabel >Hallgató neve</p:outputLabel>
-	</div>
+		<h2 style="text-align: center">Tárgy és hallgató összerendelése</h2>
 
-		<div class="list" style="text-align: center">
+		    <div style="text-align: center">
+            <p:outputLabel >Hallgató neve</p:outputLabel>
+        </div>
+ <!--       <div style="text-align: center">
+            <p:inputNumber class="inputbox" id="id" value="#{hallgato.id}" label="ID-t írd befele"/>
+        </div>  -->
+       	<div class="list" style="text-align: center">
 			<h:selectOneMenu value = "#{hallgato.name}"> 
 			   <f:selectItems value = "#{hallgato.nevLista()}" /> 
+
 			</h:selectOneMenu>
 			</div>
+		
 
-		
 		<div style="text-align: center">
-			<p:outputLabel >Jegy</p:outputLabel>
+			<p:outputLabel for="hallgatottTargyak">Hallgatott tárgyak</p:outputLabel>
 		</div>
-		
-		
-		<div class="list" style="text-align: center">
-			<h:selectOneMenu value = "#{hallgato.jegy}"> 
-			   <f:selectItem itemValue = "1" itemLabel = "Elégtelen (1)" /> 
-			   <f:selectItem itemValue = "2" itemLabel = "Elégséges (2)" /> 
-			   <f:selectItem itemValue = "3" itemLabel = "Közepes (3)" /> 
-			   <f:selectItem itemValue = "4" itemLabel = "Jó (4)" /> 
-			   <f:selectItem itemValue = "5" itemLabel = "Jeles (5)" /> 
-			</h:selectOneMenu> 	
+		<div style="text-align: center">
+			<p:inputText class="inputbox" id="hallgatottTargyak"
+				value="#{hallgato.hallgatottTargyak}" />
 		</div>
 
-		<p>
-	</p>
+<p>
+</p>
+
 		<div style="text-align: center">
-			<p:commandButton onsuccess="alert('Érdemjegy beírva.')" onerror="alert('Hiba történt')" value="Mentés" action="#{hallgato.jegybeiras()}"></p:commandButton>
+			<p:commandButton onsuccess="alert('Tárgyfelvétel sikeres.')" onerror="alert('Hiba történt')" value="Mentés" action="#{hallgato.targyFelvesz()}"></p:commandButton>
 		</div>
 
 	</h:form>
-	
-	
 </h:body>
 </html>

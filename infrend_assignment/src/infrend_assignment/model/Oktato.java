@@ -67,7 +67,6 @@ public class Oktato {
 		return "Oktató neve: " + name + ", oktatott tárgyai:" + oktatottTargyak;
 	}
 
-	// DB-s része
 	private Connection connection;
 
 	public Connection getConnection() {
@@ -84,8 +83,6 @@ public class Oktato {
 		}
 		return connection;
 	}
-	
-	
 
 	private ArrayList<Oktato> oktatoLista;
 
@@ -97,11 +94,8 @@ public class Oktato {
 			ResultSet rs = stmt.executeQuery("select name, oktatottTargyak from oktato");
 			while (rs.next()) {
 				Oktato oktato = new Oktato();
-//	    	    oktato.setId(rs.getInt("id"));
 				oktato.setName(rs.getString("name"));
-//	    	    oktato.setTanszek(rs.getString("tanszek"));
 				oktato.setOktatottTargyak(rs.getString("oktatottTargyak"));
-//				oktato.setOktatottTargyak(rs.getString("oktatottTargyak"));
 				oktatoLista.add(oktato);
 				System.out.println(oktato.toString());
 			}
